@@ -46,18 +46,38 @@
   border: none;
   border-radius: 3px;
   background: #999999;
+  transition:  0.3s;
 }
 
-.backspace, .tab, .caps, .enter, .shift, .space {
+.Backspace, .Tab, .CapsLock, .Enter, .ShiftLeft, .Space {
   width: 100%;
 }
 
-.right {
-  max-width: 97px;
+.ShiftRight {
+  min-width: 97px;
 }
 
 p {
   color: #000;
   text-align: center;
   margin: 10px;
+}
+
+.key:hover.active {
+  background: #708ee0;
+  border-radius: 10px;
+}
+
+.active {
+  background: #708ee0;
+  border-radius: 10px;
+}
+
+.key:hover {
+  cursor: pointer;
+  background: #9bb0eb;
+}
+
+.key:focus {
+  outline: none;
 }
