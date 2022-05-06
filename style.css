@@ -63,19 +63,14 @@ p {
   margin: 10px;
 }
 
-.key:hover.active {
-  background: #708ee0;
-  border-radius: 10px;
-}
-
-.active {
-  background: #708ee0;
-  border-radius: 10px;
-}
-
 .key:hover {
   cursor: pointer;
   background: #9bb0eb;
+}
+
+.key:active {
+  background: #1f75fe;
+  border-radius: 15px;
 }
 
 .key:focus {
