@@ -17,13 +17,13 @@ wrapper.appendChild(textarea);
 wrapper.appendChild(keyboardWrapper);
 wrapper.appendChild(text);
 
-export default function init(language = 'en') {
+export function init(language = 'en') {
   for (let row of keyboard) {
     let keyboardRow = document.createElement('div');
     keyboardRow.className = 'keyboard-row';
     for (let key of row) {
       let keyboardKey = document.createElement('button');
-      keyboardKey.className = `${key.code} key`;
+      keyboardKey.className = `key ${key.code}`;
       if (key.func) {
         keyboardKey.innerHTML = key.func;
       } else {
@@ -34,23 +34,45 @@ export default function init(language = 'en') {
           case 'ru':
             key.ru ? keyboardKey.innerHTML = key.ru : keyboardKey.innerHTML = key.en;
             break;
-          case 'upperEn':
-            key.upperEn ? keyboardKey.innerHTML = key.upperEn : keyboardKey.innerHTML = key.en.toUpperCase();
-            break;
-          case 'upperRu':
-            if (key.upperRu)
-              keyboardKey.innerHTML = key.upperRu;
-            if (!key.upperRu && key.ru)  
-              keyboardKey.innerHTML = key.ru.toUpperCase();
-            if (!key.upperRu && !key.ru && key.upperEn) 
-              keyboardKey.innerHTML = key.upperEn;
-            if (!key.upperRu && !key.ru && !key.upperEn) 
-              keyboardKey.innerHTML = key.en;
-            break;
         }
       }
       keyboardRow.appendChild(keyboardKey);
     }
     keyboardWrapper.appendChild(keyboardRow);
   }
+}
+
+export function switchLayout(language) {
+  let keys = document.querySelectorAll('.key');
+  let layout = keyboard.flat();
+  for (let i = 0; i < keys.length; i++) {
+    keys[i].innerHTML = '';
+    if (layout[i].func) {
+      keys[i].innerHTML = layout[i].func;
+    } else {
+      switch(language) {
+        case 'en':
+          keys[i].innerHTML = layout[i].en;
+          break;
+        case 'ru':
+          layout[i].ru ? keys[i].innerHTML = layout[i].ru : keys[i].innerHTML = layout[i].en;
+          break;
+        case 'upperEn':
+          layout[i].upperEn ? keys[i].innerHTML = layout[i].upperEn : keys[i].innerHTML = layout[i].en.toUpperCase();
+          break;
+        case 'upperRu':
+          if (layout[i].upperRu)
+            keys[i].innerHTML = layout[i].upperRu;
+          if (!layout[i].upperRu && layout[i].ru)  
+            keys[i].innerHTML = layout[i].ru.toUpperCase();
+          if (!layout[i].upperRu && !layout[i].ru && layout[i].upperEn) 
+            keys[i].innerHTML = layout[i].upperEn;
+          if (!layout[i].upperRu && !layout[i].ru && !layout[i].upperEn) 
+            keys[i].innerHTML = layout[i].en;
+          break;
+      }
+    }
+
+  }
+  
 }
