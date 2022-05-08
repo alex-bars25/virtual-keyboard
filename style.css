@@ -73,6 +73,11 @@ p {
   border-radius: 15px;
 }
 
+.active {
+  background: #1f75fe;
+  border-radius: 15px;
+}
+
 .key:focus {
   outline: none;
 }
