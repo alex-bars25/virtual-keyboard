@@ -46,7 +46,7 @@
   border: none;
   border-radius: 3px;
   background: #999999;
-  transition:  0.3s;
+  transition:  0.2s ease-out;
 }
 
 .Backspace, .Tab, .CapsLock, .Enter, .ShiftLeft, .Space {
@@ -71,6 +71,10 @@ p {
 .key:active {
   background: #1f75fe;
   border-radius: 15px;
+}
+
+.key:hover.active {
+  background: #1f75fe;
 }
 
 .active {
