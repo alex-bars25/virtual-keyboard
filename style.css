@@ -82,11 +82,6 @@ p {
   border-radius: 15px;
 }
 
-.caps {
-  background: #1f75fe;
-  border-radius: 15px;
-}
-
 .key:focus {
   outline: none;
 }
