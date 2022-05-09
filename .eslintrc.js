@@ -1,3 +1,4 @@
+/* eslint linebreak-style: ["error", "unix"] */
 module.exports = {
   env: {
     browser: true,
