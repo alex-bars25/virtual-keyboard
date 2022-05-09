@@ -2,6 +2,12 @@
 import { init, switchLayout } from './utils.js';
 
 let language = localStorage.getItem('lang');
+if (language === 'upperEn') {
+  language = 'en';
+}
+if (language === 'upperRu') {
+  language = 'ru';
+}
 if (!language) {
   language = localStorage.setItem('lang', 'en');
   init(language);
