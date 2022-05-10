@@ -9,7 +9,8 @@ if (language === 'upperRu') {
   language = 'ru';
 }
 if (!language) {
-  language = localStorage.setItem('lang', 'en');
+  localStorage.setItem('lang', 'en');
+  language = localStorage.getItem('lang');
   init(language);
 } else {
   init(language);
