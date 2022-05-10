@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #fff;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 816px;
+}
+
+h1 {
+  color: #363636;
+  margin: 30px 0;
+  text-align: center;
+  font-size: 40px;
+}
+
+
+.textarea {
+  resize: none;
+  padding: 10px;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 30px;
+  color: #000;
+  font-size: 20px;
+}
+
+.keyboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background: #cccccc;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.keyboard-row {
+  display: flex;
+  gap: 7px;
+}
+
+
+.key {
+  min-width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 3px;
+  background: #999999;
+  transition:  0.2s ease-out;
+}
+
+.Backspace, .Tab, .CapsLock, .Enter, .ShiftLeft, .Space {
+  width: 100%;
+}
+
+.ShiftRight {
+  min-width: 97px;
+}
+
+p {
+  color: #000;
+  text-align: center;
+  margin: 10px;
+}
+
+.key:hover {
+  cursor: pointer;
+  background: #9bb0eb;
+}
+
+.key:active {
+  background: #1f75fe;
+  border-radius: 15px;
+}
+
+.key:hover.active {
+  background: #1f75fe;
+}
+
+.active {
+  background: #1f75fe;
+  border-radius: 15px;
+}
+
+.key:focus {
+  outline: none;
+}
